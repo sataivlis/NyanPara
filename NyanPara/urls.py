@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import views
 
 urlpatterns = [
+    path('login/', views.my_login, name='login'),
+    path('lougout/', views.my_logout, name='logout'),
     path('admin/', admin.site.urls),
     path('', include('Nyan.urls')),
 ]

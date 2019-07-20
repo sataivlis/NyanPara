@@ -1,3 +1,9 @@
 <html>
   <h1>Yo.</h1>
+
+<form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+  <input type="submit" value="Logout">
+</form>
+
 </html>
