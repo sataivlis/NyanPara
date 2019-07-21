@@ -19,7 +19,9 @@ from . import views
 
 urlpatterns = [
     path('login/', views.my_login, name='login'),
-    path('lougout/', views.my_logout, name='logout'),
+    path('logout/', views.my_logout, name='logout'),
+    path('register/', views.register, name='register'),
+    path('register_user/', views.register_user, name='register-user'),
     path('admin/', admin.site.urls),
     path('', include('Nyan.urls')),
 ]
