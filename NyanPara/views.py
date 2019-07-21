@@ -44,7 +44,6 @@ def register_user(request):
     username = request.POST['username']
 
     # 2. Create a user with that information like we did in the shell
-
     u = User(username=username, first_name=first_name, last_name=last_name)
     u.set_password(password)
 
