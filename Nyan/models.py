@@ -11,10 +11,10 @@ class Cat(models.Model):
         return self.color + " " + self.breed
 
 class UserCat(models.Model):
-    cat_id = models.ForeignKey(Cat, on_delete=models.CASCADE)
+    cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
     nickname = models.CharField(max_length=100)
     birthdate = models.DateTimeField(default=timezone.now) #is timezone.now a function? not too sure
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nickname + "belonging to " + owner.name
+        return self.nickname

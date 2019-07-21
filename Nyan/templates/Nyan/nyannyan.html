@@ -1,7 +1,14 @@
+<!-- context = {
+  users_cats
+}  -->
 <html>
-<!-- <img src="https://i.pinimg.com/originals/3d/13/4e/3d134ef3e192349e81d3d8725a175a70.jpg"> -->
-<img src="http://pm1.narvii.com/6605/5502c24ad2783c9a7998d84b192155bbd0ea7ddf_00.jpg">
-  <!-- <h1>???</h1> -->
+
+{% for uc in users_cats %}
+  <div class="center" style="display:inline-block;">
+    <img src="{{uc.cat.img_url}}" width='150px'/>
+    <p>{{uc.nickname}}</p>
+  </div>
+{% endfor %}
 
 
 <form action="{% url 'logout' %}" method="post">
