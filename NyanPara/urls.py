@@ -22,6 +22,7 @@ urlpatterns = [
     path('logout/', views.my_logout, name='logout'),
     path('register/', views.register, name='register'),
     path('register_user/', views.register_user, name='register-user'),
+    path('adopt/', views.adopt, name='adopt'),
     path('admin/', admin.site.urls),
     path('', include('Nyan.urls')),
 ]

@@ -1,0 +1,17 @@
+<h2>Adopt</h2>
+{% if fail %}
+<h3 style="color:pink;">Invalid Information. </h3>
+{% endif %}
+
+<form action="{% url 'adopt' %}" method="post">
+  {% csrf_token %}
+  <div>
+    <label for="nickname">Nickname: </label>
+    <input id="nickname" type="text" name="nickname">
+  </div>
+
+  <div>
+    <input type="submit" value="Adopt">
+  </div>
+
+</form>

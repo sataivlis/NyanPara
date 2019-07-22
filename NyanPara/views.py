@@ -61,3 +61,13 @@ def register_user(request):
     # 3. authenticate the user, then redirect to the homepage.
     login(request, user)
     return redirect('nyannyan')
+
+
+def adopt(request):
+    # 直接跳到except那边因为value是空的……现在并不知道怎么改
+    try:
+        nickname = request.POST['nickname']
+    except:
+        return render(request, 'adopt.html', {'fail': True})
+
+    # return redirect('nyannyan')

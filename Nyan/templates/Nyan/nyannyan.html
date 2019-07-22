@@ -7,6 +7,12 @@
   <div class="center" style="display:inline-block;">
     <img src="{{uc.cat.img_url}}" width='150px'/>
     <p>{{uc.nickname}}</p>
+
+{% empty %}
+    <a href="{% url 'adopt' %}">
+      <input type="submit" value="Adopt">
+    </a>
+
   </div>
 {% endfor %}
 
