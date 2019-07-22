@@ -40,7 +40,6 @@ def register(request):
 # 1. Get the values from the request dictionary (from HTML)
 # authenticate the new user, and return to the homepage.
 def register_user(request):
-
     try:
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
@@ -50,15 +49,15 @@ def register_user(request):
         return render(request, 'register.html', {'fail': True})
 
     # 2. Create a user with that information like we did in the shell
-        user = User(username=username, first_name=first_name, last_name=last_name)
-        user.set_password(password)
+    user = User(username=username, first_name=first_name, last_name=last_name)
+    user.set_password(password)
 
-        try:
-            user.save()
-        except:
-            # What should we do in the case where there was an error with registration?
-            return render(request, 'register.html', {'fail': True})
+    try:
+        user.save()
+    except:
+        # What should we do in the case where there was an error with registration?
+        return render(request, 'register.html', {'fail': True})
 
     # 3. authenticate the user, then redirect to the homepage.
-        login(request, user)
-        return redirect('nyannyan')
+    login(request, user)
+    return redirect('nyannyan')
